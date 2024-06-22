@@ -13,7 +13,7 @@ This project is a web application developed for managing donations and appointme
 Before you begin, ensure you have met the following requirements:
 
 - PHP >= 8.2 installed globally on your machine.
-- Composer installed globally on your machine.
+- Composer installed globally on your machine. Get Composer here https://getcomposer.org/download/
 - MySQL database server installed locally or remotely.
 
 ## Installation
