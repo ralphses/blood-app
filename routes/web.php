@@ -4,7 +4,6 @@ use App\Http\Controllers\{DonationAppointmentController,
     DonationController,
     DonationMatchController,
     DonationRequestController,
-    ProfileController,
     UserProfileController};
 use Illuminate\Support\Facades\Route;
 

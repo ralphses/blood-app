@@ -128,6 +128,7 @@ class DonationAppointmentController extends Controller
             // Return the view for booking the appointment with the donation request and donation details
             return response()->view('dashboard.appointments.request', compact('donationRequest', 'donation'));
         } catch (ModelNotFoundException $exception) {
+
             // Handle the case where either the donation request or donation is not found
             return back()->with('error', "Invalid Request");
         }
@@ -154,6 +155,7 @@ class DonationAppointmentController extends Controller
         ]);
 
         try {
+
             // Use a database transaction to ensure data integrity
             DB::transaction(function () use ($request, $validated) {
                 // Find the donation and donation request based on validated IDs
@@ -188,7 +190,9 @@ class DonationAppointmentController extends Controller
             });
 
             // Redirect to the donations requests index with success message
-            return redirect()->route('dashboard.donations.requests')->with('success', 'Donation appointment request sent successfully');
+            return redirect()->route('dashboard.donations.requests')
+                ->with('success', 'Donation appointment request sent successfully');
+
         } catch (ModelNotFoundException $exception) {
             // Handle the case where the donation or donation request is not found
             return back()->with('error', 'Invalid Request');

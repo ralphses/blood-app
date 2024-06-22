@@ -5,8 +5,7 @@ This project is a web application developed for managing donations and appointme
 ## Technologies Used
 
 - Laravel PHP Framework
-- MySQL Database
-- JavaScript (if applicable)
+- MySQLite
 - HTML/CSS (if applicable)
 
 ## Prerequisites
@@ -21,31 +20,35 @@ Before you begin, ensure you have met the following requirements:
 
 1. **Clone the repository**
 
-   ```bash
-   git clone <repository-url>
+   ```
+   git clone https://github.com/ralphses/blood-app.git
    cd blood-app
 
 2. **Install Composer Dependencies**
 
-   ```bash
+   ```
    composer install
    
-3. **Copy Environmental file**
-    ```bash
+3. **Install Node.js dependencies**
+    ```
+   npm install
+   
+4. **Copy Environmental file**
+    ```
     cp .env.example .env
 
-4. **Generate Application Key**
+5. **Generate Application Key**
     ```
    php artisan key:generate
    
-5. **Run Database Migrations**
+6. **Run Database Migrations**
     ```
    php artisan migrate
 
-6. **Start the Development Server**
+7. **Start the Development Server**
     ```
    php artisan serve
 
-7. **Access the Application**
+8. **Access the Application**
    Open your web browser and navigate to http://localhost:8000 
 
