@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('donor_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('recipient_id')->constrained('users')->onDelete('cascade');
-            $table->integer('blood_type');
+            $table->string('blood_type');
             $table->enum('status', [Arr::map(DonationMatchStatus::cases(), fn($role) => $role->name)])->default(DonationMatchStatus::PENDING->name);
             $table->timestamps();
         });

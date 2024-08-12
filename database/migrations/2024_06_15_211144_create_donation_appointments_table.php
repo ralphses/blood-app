@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('donation_appointments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->unsignedBigInteger('donation_match_id')->after('user_id');
+            $table->unsignedBigInteger('donation_match_id');
             $table->foreign('donation_match_id')->references('id')->on('donation_matches')->onDelete('cascade');
 
             $table->unsignedBigInteger('donation_id');
@@ -25,7 +25,7 @@ return new class extends Migration
 
             $table->date('appointment_date');
             $table->time('appointment_time');
-            $table->foreignId('location_id')->constrained('locations', 'id')->nullable();
+            $table->foreignId('location_id')->constrained('locations')->nullable();
 
             $table->enum('status', [Arr::map(DonationAppointmentStatus::cases(), fn($role) => $role->name)])->default(DonationAppointmentStatus::SCHEDULED->name);
             $table->timestamps();
