@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Ralph',
-            'email' => 'admin@gmail.com',
+            'email' => '    ',
             'password' => Hash::make('password'),
             'role' => Role::ADMIN,
             'blood_type' => 'AB+',
